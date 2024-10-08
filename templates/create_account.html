@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Create Account</title>
+</head>
+<body>
+    <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+        <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+            <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+            <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+                <div class="max-w-md mx-auto">
+                    <h1 class="text-2xl font-semibold">Create Account</h1>
+                    <form id="createAccountForm" action="{{ url_for('create_account') }}" method="POST">
+                        <div class="relative mt-4">
+                            <input id="name" name="name" type="text" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-cyan-600" placeholder="Full Name" required>
+                            <label for="name" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600">Full Name</label>
+                        </div>
+                        <div class="relative mt-4">
+                            <input id="email" name="email" type="email" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-cyan-600" placeholder="Email address" required>
+                            <label for="email" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600">Email Address</label>
+                        </div>
+                        <div class="relative mt-4">
+                            <input id="password" name="password" type="password" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-cyan-600" placeholder="Password" required>
+                            <label for="password" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600">Password</label>
+                        </div>
+                        <div class="relative mt-4">
+                            <label for="role" class="text-gray-600 text-sm">Select Role</label>
+                            <select id="role" name="role" class="mt-1 block w-full h-10 border-b-2 border-gray-300 focus:outline-none focus:border-cyan-600" required>
+                                <option value="" disabled selected>Select your role</option>
+                                <option value="FARMER">Farmer</option>
+                                <option value="AG_OFFICER">AG Officer</option>
+                            </select>
+                        </div>
+                        <div class="mt-6">
+                            <button type="submit" class="bg-cyan-500 text-white rounded-md px-4 py-2 w-full">Create Account</button>
+                        </div>
+                    </form>
+                    <div class="mt-4 text-center">
+                        <a href="{{ url_for('login') }}" class="text-cyan-500 hover:underline">Already have an account? Login here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

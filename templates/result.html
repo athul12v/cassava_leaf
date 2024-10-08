@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Prediction Result</h1>
+
+        {% if error %}
+            <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">Error!</h4>
+                <p>{{ error }}</p>
+            </div>
+        {% elif disease %}
+            <div class="alert alert-info" role="alert">
+                <h4 class="alert-heading">Disease: {{ disease }}</h4>
+                <hr>
+                <h5>Prevention Methods:</h5>
+                <ul>
+                    {% if prevention %}
+                        {% for method in prevention %}
+                            <li>{{ method }}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li>No prevention methods available.</li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% else %}
+            <div class="alert alert-warning" role="alert">
+                <p>No results to display.</p>
+            </div>
+        {% endif %}
+
+        <a href="{{ url_for('login') }}" class="btn btn-primary">Go Back</a>
+    </div>
+</body>
+</html>

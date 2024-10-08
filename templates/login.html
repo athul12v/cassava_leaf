@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+        <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+            <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+            <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+                <div class="max-w-md mx-auto">
+                    <h1 class="text-2xl font-semibold">Login</h1>
+                    <form id="loginForm" action="{{ url_for('login') }}" method="POST">
+                        <div class="relative mt-4">
+                            <input id="email" name="email" type="email" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-cyan-600" placeholder="Email address" required>
+                            <label for="email" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600">Email Address</label>
+                        </div>
+                        <div class="relative mt-4">
+                            <input id="password" name="password" type="password" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-cyan-600" placeholder="Password" required>
+                            <label for="password" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600">Password</label>
+                        </div>
+                        <div class="mt-4 flex items-center">
+                            <span class="mr-2 text-gray-600 text-sm">Login as</span>
+                            <a id="agOfficerLink" href="#" class="text-cyan-500 hover:underline">AG Officer</a>
+                        </div>
+                        <div class="mt-6">  
+                            <button type="submit" class="bg-cyan-500 text-white rounded-md px-4 py-2 w-full">Login</button>
+                        </div>
+                    </form>
+                    <div class="mt-4 text-center">
+                        <a href="{{ url_for('create_account') }}" class="text-cyan-500 hover:underline">Create a new account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const agOfficerLink = document.getElementById('agOfficerLink');
+        const form = document.getElementById('loginForm');
+        const originalAction = "{{ url_for('login') }}"; // Original login route
+    
+        agOfficerLink.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            // Set the form action for AG Officer login
+            form.action = originalAction + "?role=AG_OFFICER";
+            console.log("Form action changed to:", form.action); // Debugging statement
+            // Submit the form
+            form.submit();
+        });
+    </script>
+    
+
+</body>
+</html>

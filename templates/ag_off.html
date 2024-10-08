@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AG Officer Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .main_page {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .banner-section {
+            background: url('banner-image.jpg') no-repeat center center/cover;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .login-link {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .function-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .function-card {
+            background: #e7e7e7;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+        .function-card:hover {
+            transform: scale(1.05);
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_page">
+        <div class="banner-section"></div>
+        <div class="login-link">
+            <h2>Cassava Web App - AG Officer Dashboard</h2>
+            <p>Welcome, AG Officer!</p>
+        </div>
+        <div class="function-section">
+            <div class="function-card">
+                <h3>View Diseases</h3>
+                <a href="/view_diseases">View</a>
+            </div>
+            <div class="function-card">
+                <h3>Add New Disease</h3>
+                <a href="/add_disease">Add</a>
+            </div>
+            <div class="function-card">
+                <h3>Modify Disease</h3>
+                <a href="/view_diseases">Modify</a> <!-- This should link to the diseases view -->
+            </div>
+            <div class="function-card">
+                <h3>Delete Disease</h3>
+                <a href="/view_diseases">Delete</a> <!-- This should link to the diseases view -->
+            </div>
+            <div class="function-card">
+                <h3>Logout</h3>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Cassava Web App. All Rights Reserved.</p>
+            <p>If you have any questions, please contact us at: <a href="mailto:viswanathanathul@gmail.com">info@cassavawebapp.com</a></p>
+        </div>
+    </div>
+</body>
+</html>

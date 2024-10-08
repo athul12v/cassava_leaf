@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Web App</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        .banner-section {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGdyZWVuJTIwZm9yZXN0fGVufDB8fHx8MTY5MDYyMzY5NA&ixlib=rb-1.2.1&q=80&w=1920') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .ai-button {
+            background-color: #4CAF50; /* Green color */
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .ai-button:hover {
+            background-color: #45a049; /* Darker green */
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-section">
+        <h1><i>Welcome!</i></h1>
+        <a href="http://127.0.0.1:5000/login" class="ai-button">AI ENGINE</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Web App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+        <h1 class="text-2xl font-bold mb-6 text-center">Cassava Leaf Disease Prediction</h1>
+        <form action="/pred" method="POST" enctype="multipart/form-data" class="space-y-4">
+            <div>
+                <label for="file-upload" class="block text-sm font-medium text-gray-700">Upload Leaf Image</label>
+                <input type="file" id="file-upload" name="file" accept="image/*" class="mt-1 block w-full text-gray-900 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+            </div>
+            <div class="flex justify-between">
+                <button type="submit" class="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    Predict
+                </button>
+                <button type="button" onclick="clearFile()" class="px-4 py-2 bg-gray-300 text-gray-800 font-semibold rounded-md shadow-sm hover:bg-gray-400 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                    Clear
+                </button>
+            </div>
+        </form>
+        <div class="mt-6 text-center">
+            <a href="/view_diseases" class="inline-block px-4 py-2 bg-green-600 text-white font-semibold rounded-md shadow-sm hover:bg-green-700 focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                View Cassava Diseases
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function clearFile() {
+            document.getElementById('file-upload').value = '';
+        }
+    </script>
+</body>
+</html>

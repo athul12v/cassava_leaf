@@ -9,6 +9,9 @@
 <body class="bg-gray-100 flex items-center justify-center h-screen">
     <div class="bg-white rounded-lg shadow-md p-6 w-96">
         <h1 class="text-xl font-bold text-center mb-4">Modify Disease</h1>
+        {% if error %}
+            <div class="text-red-500 mb-4">{{ error }}</div>
+        {% endif %}
         <form action="/modify_disease/{{ disease[0] }}" method="POST">
             <div class="mb-4">
                 <label for="disease_name" class="block text-gray-700">Disease Name:</label>
@@ -16,7 +19,15 @@
             </div>
             <div class="mb-4">
                 <label for="prevention_methods" class="block text-gray-700">Prevention Methods:</label>
-                <textarea name="prevention_methods" id="prevention_methods" required class="border border-gray-300 p-2 w-full h-24 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">{{ disease[2] }}</textarea>
+                <textarea name="prevention_methods" id="prevention_methods" required class="border border-gray-300 p-2 w-full h-24 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">{{ disease[2].replace('$', '\n') }}</textarea>
+            </div>
+            <div class="mb-4">
+                <label for="symptoms" class="block text-gray-700">Symptoms:</label>
+                <textarea name="symptoms" id="symptoms" required class="border border-gray-300 p-2 w-full h-24 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">{{ disease[3] }}</textarea>
+            </div>
+            <div class="mb-4">
+                <label for="disease_image" class="block text-gray-700">Image URL:</label>
+                <input type="text" name="disease_image" id="disease_image" value="{{ disease[4] }}" required class="border border-gray-300 p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full">Modify Disease</button>
         </form>
